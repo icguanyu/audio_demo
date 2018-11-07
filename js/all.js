@@ -1,5 +1,4 @@
 // 播放器元素
-const myaudio = document.querySelector("audio");
 const b_play = document.querySelector(".play");
 const b_pause = document.querySelector(".pause");
 const b_fast_forward = document.querySelector(".fast_forward");
@@ -18,35 +17,42 @@ const t_profile_intro = document.querySelector(".porfile_info .intro");
 // 狀態
 let onplay = false 
 let currentTime = ''
-// const t_bufferBar = document.querySelector('.buffer')
-// const t_duration = document.querySelector('.duration')
-// const t_currentTime = document.querySelector('.currentTime')
-// const t_volume = document.querySelector('.volume')
-// const t_mute = document.querySelector('.mute')
-// const t_autoplay = document.querySelector('.autoplay')
-// const t_control = document.querySelector('.control')
-// const t_currentSrc = document.querySelector('.currentSrc')
-// const t_currentPercent = document.querySelector('.currentPercent')
-// const t_end = document.querySelector('.end')
-// const t_pause = document.querySelector('.pause')
-// const t_timeStamp = document.querySelector('.timeStamp')
-myaudio.addEventListener("timeupdate", e => {
+// Visualizations
+let canvas, ctx, source, context, analyser, fbc_array, bars, bar_x
+let audio = new Audio();
+audio.src = 'sounds/sounds.mp3';
+audio.controls = false ; // 不顯示預設播放器
+audio.autoplay = false ;
+function initMp3Player(){
+	document.querySelector('body').appendChild(audio);
+	context = new AudioContext(); // AudioContext object instance
+	analyser = context.createAnalyser(); // AnalyserNode method
+	canvas = document.getElementById('analyser_render');
+	ctx = canvas.getContext('2d');
+	// Re-route audio playback into the processing graph of the AudioContext
+	source = context.createMediaElementSource(audio); 
+	source.connect(analyser);
+	analyser.connect(context.destination);
+	frameLooper();
+}
+function frameLooper(){
+	window.requestAnimationFrame(frameLooper);
+	fbc_array = new Uint8Array(analyser.frequencyBinCount);
+	analyser.getByteFrequencyData(fbc_array);
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.fillStyle = '#fff'; 
+	bars = 200;
+	for (var i = 0; i < bars; i++) {
+		bar_x = i * 2;
+		bar_width = 0.8;
+		bar_height = -(fbc_array[i]/3);
+		ctx.fillRect(bar_x, canvas.height, bar_width, bar_height);
+	}
+}
+
+audio.addEventListener("timeupdate", e => {
   console.log(e);
-  // t_control.textContent = "是否顯示控制器: " + e.target.controls;
-  // t_bufferBar.textContent - "是否顯示緩衝條" + e.target.buffered.end;
-  // t_autoplay.textContent = "是否自動播放: " + e.target.autoplay;
-  // t_currentSrc.textContent = "檔案來源: " + e.target.currentSrc;
-  // t_duration.textContent = "音軌總長: " + e.target.duration;
-  // t_currentTime.textContent = "現在秒數:" + e.target.currentTime;
-  // t_currentPercent.textContent =
-  //   "播放進度:" +
-  //   Math.round((e.target.currentTime / e.target.duration) * 100) +
-  //   "%";
-  // t_end.textContent = "是否播完:" + e.target.ended;
-  // t_pause.textContent = "是否暫停中:" + e.target.paused;
-  // t_volume.textContent = "音量(0~1):" + e.target.volume;
-  // t_mute.textContent = "是否靜音:" + e.target.muted;
-  // t_timeStamp.textContent = "timeStamp(意義不明):" + e.timeStamp;
+
   let progress =
     ((e.target.currentTime / e.target.duration) * 100).toFixed(2) + "%";
   console.log(progress);
@@ -60,6 +66,7 @@ myaudio.addEventListener("timeupdate", e => {
   );
 });
 
+// Seconds to H:M:S
 function formatSecond(secs) {
   let date = new Date(null);
   date.setSeconds(secs); // specify value for SECONDS here
@@ -78,20 +85,23 @@ function btn_switch () {
   }
 }
 
+
+window.addEventListener("load", initMp3Player, false);
+
 b_play.addEventListener("click", () => {
-  myaudio.play();
+  audio.play();
   btn_switch()
 });
 b_pause.addEventListener("click", () => {
-  myaudio.pause();
+  audio.pause();
   btn_switch()
 });
 
 b_fast_forward.addEventListener("click", () => {
-  myaudio.currentTime += 20
-  myaudio.play();
+  audio.currentTime += 20
+  audio.play();
 });
 b_fast_rewind.addEventListener("click", () => {
-  myaudio.currentTime -= 20
-  myaudio.play();
+  audio.currentTime -= 20
+  audio.play();
 });
