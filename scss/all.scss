@@ -1,0 +1,174 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  // background: #f5fcff;
+  width: 100%;
+  min-width: 1024px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 微軟正黑體;
+}
+* {
+  position: relative;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+.top {
+  height: 150px;
+  width: 100%;
+  max-height: 400px;
+  background-color: #a1a1a1;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  transition: all .5s;
+  .opacity_progress_bar {
+    position: absolute;
+    z-index: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 20%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all .3s;
+  }
+  .empty{
+    padding-left: 50px;
+  }
+  .right {
+    display: flex;
+    align-items: flex-end;
+  }
+  .left{
+    min-width: 340px;
+  }
+  .audio_panel {
+    width: 100%;
+    margin-left: -10px;
+    z-index: 1;
+    .control {
+      margin-left: 40px;
+      padding: 10px 0;
+      display: flex;
+      color: #fff;
+      transition: all .5s;
+      .info{
+        flex:1;
+        .intro{
+          font-size: 12px;
+        }
+      }
+      .btns{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 60px;
+        i{
+          cursor: pointer;
+          margin: 0 10px;
+          font-size: 32px;
+        }
+        .play{
+          display: block;
+        }
+        .pause{
+          display: none;
+        }
+        .play,.pause{
+          font-size: 48px;
+        }
+      }
+      h4 {
+        font-size: 18px;
+        letter-spacing: 1px;
+      }
+      p{
+        font-size: 14px;
+      }
+    }
+    .times {
+      display: flex;
+      font-size: 12px;
+      margin-left: 40px;
+      padding: 5px 0px;
+      color: #eee;
+      justify-content: space-between;
+    }
+    .process {
+      .process_out {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 7px;
+        .process_in {
+          height: 100%;
+          width: 30%;
+          background: rgba(255, 223, 37, 0.73);
+          transition: all .3s;
+        }
+      }
+    }
+  }
+  &:hover{
+    height: 200px;
+    .audio_panel .control{
+      padding: 20px 0;
+      font-size: 16px;
+    }
+    & + .bottom .profile{
+      margin-top: -180px;
+    }
+  }
+}
+.bottom {
+  padding: 30px 20px 30px 50px;
+}
+.content {
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  .left {
+    flex: 1;
+    .profile {
+      min-width: 280px;
+      margin-top: -160px;
+      background: #fff;
+      border: 10px solid #fff;
+      padding: 5px;
+      border-radius: 3px;
+      box-shadow: 0px 5px 20px #ccc;
+      transition: all .3s;
+      img {
+        width: 100%;
+      }
+      .porfile_info {
+        border-top: 1px solid #ddd;
+        padding: 10px;
+        .name {
+          font-size: 16px;
+          font-weight: bold;
+        }
+        .intro{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .right {
+    flex: 3;
+  }
+}

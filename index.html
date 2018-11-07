@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="ie=edge"
+  >
+  <title>Simple Audio Demo</title>
+</head>
+<link
+  rel="stylesheet"
+  href="assets/style/all.css"
+>
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+>
+
+<body>
+  <div class="top content">
+    <div class="left empty">
+    </div>
+    <div class="right">
+      <div class="audio_panel">
+        <div class="control">
+          <div class="info">
+            <h4 class="title">NoriKa</h4>
+            <p class="intro">網紅配合、廣告合作、商品置入、形象代言、整合行銷等服務，以及顧問諮詢、企業內訓、演講授課均提供完整之服務。</p>
+          </div>
+          <div class="btns">
+            <i class="material-icons fast_rewind">
+              fast_rewind
+            </i>
+            <i class="material-icons play">
+              play_circle_filled
+            </i>
+            <i class="material-icons pause">
+              pause_circle_filled
+            </i>
+            <i class="material-icons fast_forward">
+              fast_forward
+            </i>
+          </div>
+        </div>
+        <div class="times">
+          <div class="start">00:00:00</div>
+          <div class="end">00:00:00</div>
+        </div>
+        <div class="process">
+          <div class="process_out">
+            <div class="process_in"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="opacity_progress_bar"></div>
+  </div>
+  <div class="bottom content">
+    <div class="left author_info">
+      <div class="profile">
+        <img
+          src="/assets/img/logo.png"
+          alt=""
+        >
+        <div class="porfile_info">
+          <p class="name">99 design</p>
+          <p class="intro">How to design an album cover</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="right audio_list"></div>
+  </div>
+
+  <div class="info">
+    <audio>
+      <source
+        data-key="1"
+        src="sounds/sounds.mp3"
+      >
+      Your browser does not support the audio tag.
+    </audio>
+    <!-- <button id="play">播放</button>
+    <button id="pause">暫停</button>
+    <button id="replay">重播</button>
+    <div class="autoplay"></div>
+    <div class="control"></div>
+    <div class="buffer"></div>
+    <div class="currentSrc"></div>
+    <div class="currentTime"></div>
+    <div class="duration"></div>
+    <div class="currentPercent"></div>
+    <div class="end"></div>
+    <div class="pause"></div>
+    <div class="volume"></div>
+    <div class="mute"></div>
+    <div class="timeStamp"></div> -->
+  </div>
+</body>
+<script src="js/all.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
+
+</html>
