@@ -25,6 +25,43 @@ h6 {
 p {
   margin: 0;
 }
+.content {
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  .left {
+    width: 280px;
+    .profile {
+      width: 280px;
+      margin-top: -160px;
+      background: #fff;
+      border: 10px solid #fff;
+      padding: 5px;
+      border-radius: 3px;
+      box-shadow: 0px 5px 20px #ccc;
+      transition: all 0.3s;
+      img {
+        width: 100%;
+      }
+      .porfile_info {
+        border-top: 1px solid #ddd;
+        padding: 10px;
+        .name {
+          font-size: 16px;
+          font-weight: bold;
+        }
+        .intro {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .right {
+    flex: 3;
+  }
+}
 .top {
   padding: 10px 0px 0px 100px;
   height: 150px;
@@ -108,7 +145,7 @@ p {
       display: flex;
       font-size: 12px;
       margin-left: 40px;
-      padding: 5px 0px;
+      padding: 5px 10px 5px 0px;
       color: #eee;
       justify-content: space-between;
     }
@@ -140,44 +177,45 @@ p {
 }
 .bottom {
   padding: 30px 20px 30px 100px;
+  .audio_list {
+    padding-left: 40px;
+    .content_title{
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  }
 }
-.content {
-  z-index: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  .left {
-    width: 280px;
-    .profile {
-      width: 280px;
-      margin-top: -160px;
-      background: #fff;
-      border: 10px solid #fff;
-      padding: 5px;
-      border-radius: 3px;
-      box-shadow: 0px 5px 20px #ccc;
-      transition: all 0.3s;
-      img {
-        width: 100%;
+
+.lists{
+  .item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    .content{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      *{
+        margin-right: 15px;
       }
-      .porfile_info {
-        border-top: 1px solid #ddd;
-        padding: 10px;
-        .name {
-          font-size: 16px;
-          font-weight: bold;
+      .thumb{
+        width: 60px;
+        height: 60px;
+        border: 1px solid #000;
+        img{
+          width: 100%;
         }
-        .intro {
-          font-size: 14px;
+        .play{
+          position: absolute;
+          display: none;
         }
       }
     }
   }
-  .right {
-    flex: 3;
-  }
 }
+
 #analyser_render {
   position: absolute;
   left: 0;
