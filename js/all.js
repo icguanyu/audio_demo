@@ -65,12 +65,9 @@ function initAudioData(nowTargetIndex) {
     nowAudio_detail = myJson[nowTargetIndex]
     initMp3Player(nowAudio_detail)
     initMp3Info(nowAudio_detail)
-    audio.play()
-    btn_switch(true);
   });
 }
 function initMp3Player(nowAudio_detail) {
-  console.log(nowAudio_detail);
   $('audio').remove()
   audio = new Audio
   audio.src = nowAudio_detail.content.work.url;
@@ -144,6 +141,7 @@ window.addEventListener("load", initAudioData(0));
 $lists.on('click','.thumb',(e)=>{
   let nowTargetIndex = e.currentTarget.dataset.key;
   initAudioData(nowTargetIndex)
+  btn_switch(false);
 })
 b_play.addEventListener("click", () => {
   audio.play();
