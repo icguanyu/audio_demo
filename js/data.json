@@ -2,7 +2,7 @@
   {
     "id": 0,
     "author": {
-      "name": "織田紀香",
+      "name": "節目名稱一",
       "intro": "網路社群筆耕多年，擁有三萬名粉絲，長久以來穩定互動，帶著強大的專業形象及吸引力，提升品牌知名度進而打造口碑。",
       "profile": "./assets/img/logo.png"
     },
@@ -12,7 +12,58 @@
         "subtitle": "到底是讀書還是健身？揭秘台科大EMBA的各種豐富學習資源！",
         "images": "./assets/img/logo.png",
         "url": "sounds/sounds.mp3",
-        "cate": "勵志"
+        "class": "勵志"
+      }
+    }
+  },
+  {
+    "id": 1,
+    "author": {
+      "name": "節目名稱二",
+      "intro": "網路社群筆耕多年，擁有三萬名粉絲，長久以來穩定互動，帶著強大的專業形象及吸引力，提升品牌知名度進而打造口碑。",
+      "profile": "./assets/img/logo.png"
+    },
+    "content": {
+      "work": {
+        "title": "紀香品味生活",
+        "subtitle": "到底是讀書還是健身？揭秘台科大EMBA的各種豐富學習資源！",
+        "images": "./assets/img/logo.png",
+        "url": "sounds/sounds.mp3",
+        "class": "勵志"
+      }
+    }
+  },
+  {
+    "id": 2,
+    "author": {
+      "name": "節目名稱三",
+      "intro": "網路社群筆耕多年，擁有三萬名粉絲，長久以來穩定互動，帶著強大的專業形象及吸引力，提升品牌知名度進而打造口碑。",
+      "profile": "./assets/img/logo.png"
+    },
+    "content": {
+      "work": {
+        "title": "紀香品味生活",
+        "subtitle": "到底是讀書還是健身？揭秘台科大EMBA的各種豐富學習資源！",
+        "images": "./assets/img/logo.png",
+        "url": "sounds/sounds.mp3",
+        "class": "勵志"
+      }
+    }
+  },
+  {
+    "id": 3,
+    "author": {
+      "name": "節目名稱四",
+      "intro": "網路社群筆耕多年，擁有三萬名粉絲，長久以來穩定互動，帶著強大的專業形象及吸引力，提升品牌知名度進而打造口碑。",
+      "profile": "./assets/img/logo.png"
+    },
+    "content": {
+      "work": {
+        "title": "紀香品味生活",
+        "subtitle": "到底是讀書還是健身？揭秘台科大EMBA的各種豐富學習資源！",
+        "images": "./assets/img/logo.png",
+        "url": "sounds/sounds.mp3",
+        "class": "勵志"
       }
     }
   }

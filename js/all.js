@@ -1,5 +1,7 @@
 // 資料
 let audio_list = []
+let nowAudio_detail
+let $lists = $('.lists')
 // 播放器元素
 const b_play = document.querySelector(".play");
 const b_pause = document.querySelector(".pause");
@@ -21,11 +23,10 @@ let onplay = false;
 let currentTime = "";
 // Visualizations
 let canvas, ctx, source, context, analyser, fbc_array, bars, bar_x;
-let audio = new Audio();
+let audio
 // init
 function getData() {
-  console.log('start');
-  fetch('https://infinite-sands-75179.herokuapp.com/api/voices/6')
+  fetch('js/list.json')
   .then(function(response) {
     return response.json();
   })
@@ -34,11 +35,42 @@ function getData() {
     initlist()
   });
 }
-function initlist() {
-  console.log(audio_list);
+function initlist() { 
+  audio_list.forEach(item=>{
+    $lists.append(`
+    <div class="item">
+      <div class="content">
+        <div class="index">${item.id+1}</div>
+        <div class="thumb" data-key=${item.id}>
+          <img src="${item.thumb}" alt="" />
+          <div class="play">
+            <i class="material-icons play"> play_circle_filled </i>
+          </div>
+        </div>
+        <div class="info">
+          <div class="item_name">${item.title}</div>
+          <div class="item_info">${item.intro}</div>
+        </div>
+      </div>
+      <div class="item_duration">00:04:33</div>
+    </div>`)
+  })
 }
-function initMp3Player() {
-  audio.src = "sounds/sounds.mp3";
+function initAudioData(nowTargetIndex) {
+  fetch('js/data.json')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    nowAudio_detail = myJson[nowTargetIndex]
+    initMp3Player(nowAudio_detail)
+  });
+}
+function initMp3Player(nowAudio_detail) {
+  console.log(nowAudio_detail);
+  $('audio').remove()
+  audio = new Audio
+  audio.src = nowAudio_detail.content.work.url;
   audio.controls = false;
   audio.autoplay = false;
   document.querySelector("body").appendChild(audio);
@@ -50,6 +82,20 @@ function initMp3Player() {
   source = context.createMediaElementSource(audio);
   source.connect(analyser);
   analyser.connect(context.destination);
+
+  audio.addEventListener("timeupdate", e => {
+    console.log(e);
+    let progress =
+      ((e.target.currentTime / e.target.duration) * 100).toFixed(2) + "%";
+    console.log(progress);
+    v_audio_progress_bar.style.width = progress;
+    v_audio_progress_bg.style.width = progress;
+    t_audio_time_start.textContent = formatSecond(
+      e.target.currentTime.toFixed(0)
+    );
+    t_audio_time_end.textContent = formatSecond(e.target.duration.toFixed(0));
+  });
+
   frameLooper();
 }
 // 音訊視覺化 Canvas
@@ -87,22 +133,13 @@ function btn_switch() {
     b_pause.style.display = "none";
   }
 }
-
-audio.addEventListener("timeupdate", e => {
-  console.log(e);
-  let progress =
-    ((e.target.currentTime / e.target.duration) * 100).toFixed(2) + "%";
-  console.log(progress);
-  v_audio_progress_bar.style.width = progress;
-  v_audio_progress_bg.style.width = progress;
-  t_audio_time_start.textContent = formatSecond(
-    e.target.currentTime.toFixed(0)
-  );
-  t_audio_time_end.textContent = formatSecond(e.target.duration.toFixed(0));
-});
+$lists.on('click','.thumb',(e)=>{
+  let nowTargetIndex = e.currentTarget.dataset.key;
+  initAudioData(nowTargetIndex)
+})
 
 window.addEventListener("load", getData);
-window.addEventListener("load", initMp3Player, false);
+// window.addEventListener("load", initMp3Player, false);
 
 b_play.addEventListener("click", () => {
   audio.play();
@@ -112,7 +149,6 @@ b_pause.addEventListener("click", () => {
   audio.pause();
   btn_switch();
 });
-
 b_fast_forward.addEventListener("click", () => {
   audio.currentTime += 20;
   audio.play();

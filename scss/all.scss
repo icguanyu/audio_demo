@@ -192,7 +192,11 @@ p {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #eee;
+    padding: 8px 0;
+    &:last-child{
+      border: none;
+    }
     .content{
       display: flex;
       justify-content: flex-start;
@@ -203,15 +207,27 @@ p {
       .thumb{
         width: 60px;
         height: 60px;
-        border: 1px solid #000;
         img{
-          width: 100%;
+          width: 60px;
+          height: 60px;
         }
         .play{
           position: absolute;
           display: none;
         }
       }
+      .info{
+        .item_name{
+
+        }
+        .item_info{
+          color: #666;
+          font-size: 14px;
+        }
+      }
+    }
+    .item_duration{
+      font-size: 12px;
     }
   }
 }

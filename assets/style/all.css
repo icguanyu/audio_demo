@@ -276,7 +276,12 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #eee;
+  padding: 8px 0;
+}
+
+.lists .item:last-child {
+  border: none;
 }
 
 .lists .item .content {
@@ -298,16 +303,25 @@ p {
 .lists .item .content .thumb {
   width: 60px;
   height: 60px;
-  border: 1px solid #000;
 }
 
 .lists .item .content .thumb img {
-  width: 100%;
+  width: 60px;
+  height: 60px;
 }
 
 .lists .item .content .thumb .play {
   position: absolute;
   display: none;
+}
+
+.lists .item .content .info .item_info {
+  color: #666;
+  font-size: 14px;
+}
+
+.lists .item .item_duration {
+  font-size: 12px;
 }
 
 #analyser_render {

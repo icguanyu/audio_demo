@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "title": "紀香品味生活",
+    "intro": "女兒的成長一輩子只有一次，錯過了就沒有了。",
+    "thumb": "https://firebasestorage.googleapis.com/v0/b/projectnodejs-10845.appspot.com/o/present_api_test_1.jpg?alt=media&token=aeb74ffb-b91f-40f6-8513-05cda6fac5aa"
+  },
+  {
+    "id": 1,
+    "title": "紀香日常隨聊",
+    "intro": "我興高采烈的跟紀香老師分享我買了新的筆電，並興高采烈的在錄音時用它在旁邊工作。",
+    "thumb": "https://firebasestorage.googleapis.com/v0/b/projectnodejs-10845.appspot.com/o/present_api_test_2.jpg?alt=media&token=513313e8-252e-430a-8e1d-fddc0ff4b6ea"
+  },
+  {
+    "id": 2,
+    "title": "紀香經驗談",
+    "intro": "如果你也想勇敢創業，那一定要先做足功課。這次邀請到台中Care Salon的漂亮老闆娘，我們一起聽聽在美髮美容業的辛苦和挑戰。",
+    "thumb": "https://firebasestorage.googleapis.com/v0/b/projectnodejs-10845.appspot.com/o/present_api_test_3.jpg?alt=media&token=a07bac70-ee61-41d0-a714-029e16d89d5c"
+  },
+  {
+    "id": 3,
+    "title": "紀香處世哲學",
+    "intro": "虛擬貨幣起頭的瘋狂炒幣活動，遲早都會落幕，花8分鐘搞懂真真假假的區塊鏈與虛擬貨幣。",
+    "thumb": "https://firebasestorage.googleapis.com/v0/b/projectnodejs-10845.appspot.com/o/present_api_test_4.jpg?alt=media&token=3cc2c0c4-6d0d-4331-8b44-dcc2b61008df"
+  }
+]
