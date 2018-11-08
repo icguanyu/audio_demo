@@ -9,7 +9,7 @@
     "content": {
       "work": {
         "title": "紀香品味生活",
-        "subtitle": "到底是讀書還是健身？揭秘台科大EMBA的各種豐富學習資源！",
+        "subtitle": "女兒的成長一輩子只有一次，錯過了就沒有了。",
         "images": "./assets/img/logo.png",
         "url": "sounds/sounds.mp3",
         "class": "勵志"
@@ -25,8 +25,8 @@
     },
     "content": {
       "work": {
-        "title": "紀香品味生活",
-        "subtitle": "到底是讀書還是健身？揭秘台科大EMBA的各種豐富學習資源！",
+        "title": "紀香日常隨聊",
+        "subtitle": "我興高采烈的跟紀香老師分享我買了新的筆電，並興高采烈的在錄音時用它在旁邊工作。",
         "images": "./assets/img/logo.png",
         "url": "sounds/sounds.mp3",
         "class": "勵志"
@@ -36,14 +36,14 @@
   {
     "id": 2,
     "author": {
-      "name": "節目名稱三",
-      "intro": "網路社群筆耕多年，擁有三萬名粉絲，長久以來穩定互動，帶著強大的專業形象及吸引力，提升品牌知名度進而打造口碑。",
+      "name": "紀香經驗談",
+      "intro": "如果你也想勇敢創業，那一定要先做足功課。這次邀請到台中Care Salon的漂亮老闆娘，我們一起聽聽在美髮美容業的辛苦和挑戰。",
       "profile": "./assets/img/logo.png"
     },
     "content": {
       "work": {
-        "title": "紀香品味生活",
-        "subtitle": "到底是讀書還是健身？揭秘台科大EMBA的各種豐富學習資源！",
+        "title": "紀香經驗談",
+        "subtitle": "如果你也想勇敢創業，那一定要先做足功課。這次邀請到台中Care Salon的漂亮老闆娘，我們一起聽聽在美髮美容業的辛苦和挑戰。",
         "images": "./assets/img/logo.png",
         "url": "sounds/sounds.mp3",
         "class": "勵志"
@@ -59,8 +59,8 @@
     },
     "content": {
       "work": {
-        "title": "紀香品味生活",
-        "subtitle": "到底是讀書還是健身？揭秘台科大EMBA的各種豐富學習資源！",
+        "title": "紀香處世哲學",
+        "subtitle": "虛擬貨幣起頭的瘋狂炒幣活動，遲早都會落幕，花8分鐘搞懂真真假假的區塊鏈與虛擬貨幣。",
         "images": "./assets/img/logo.png",
         "url": "sounds/sounds.mp3",
         "class": "勵志"
